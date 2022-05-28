@@ -61,11 +61,13 @@
   window.addEventListener('keydown', function(e) {
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if (!audio) return; //in case of null, we stop the function from running
-    audio.play();
-
+    audio.currentTime = 0; //rewinds (if applicable) to start
+    audio.play(); 
   });
 </script>
 
 
 </body>
 </html>
+
+// https://youtu.be/VuN8qwZoego?t=547
